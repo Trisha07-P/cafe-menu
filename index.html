@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee & Brews Menu</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background: #1a1a1a; display: flex; flex-direction: column; align-items: center; padding: 10px; }
+        .no-print { width: 148mm; background: #fff; padding: 10px; margin-bottom: 10px; text-align: right; border-radius: 5px; }
+        .btn { background: #8c533e; color: #fff; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        
+        /* A5 Page Container */
+        .page { width: 148mm; height: 210mm; background: #fcfaf7; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; }
+        header { text-align: center; border-bottom: 2px solid #8c533e; padding-bottom: 4px; margin-bottom: 8px; }
+        h1 { font-size: 20px; color: #8c533e; text-transform: uppercase; }
+        p.sub { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex-grow: 1; }
+        h2 { font-size: 12px; color: #333; border-bottom: 1px solid #ccc; padding-bottom: 2px; margin-bottom: 6px; text-transform: uppercase; }
+
+        .item { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+        .item img { width: 34px; height: 34px; border-radius: 4px; object-fit: cover; }
+        .info { flex-grow: 1; font-size: 10px; }
+        .row { display: flex; justify-content: space-between; font-weight: bold; }
+        .price { color: #8c533e; }
+        .desc { font-size: 8px; color: #666; }
+
+        /* QR Cutout Box */
+        .cutout { border: 1.5px dashed #8c533e; border-radius: 6px; padding: 6px; display: flex; align-items: center; justify-content: space-between; background: #fff; margin-top: 4px; }
+        .cutout-text h3 { font-size: 11px; color: #333; }
+        .cutout-text p { font-size: 8px; color: #666; }
+        .cutout img { width: 65px; height: 65px; }
+
+        @media print {
+            @page { size: A5 portrait; margin: 0; }
+            body { background: none; padding: 0; }
+            .no-print { display: none; }
+            .page { width: 148mm; height: 210mm; padding: 8mm; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print">
+        <button class="btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <div class="page">
+        <header>
+            <h1>Coffee & Brews</h1>
+            <p class="sub">Artisanal Espresso & Cold Drinks</p>
+        </header>
+
+        <div class="grid">
+            <!-- Left Column -->
+            <div>
+                <h2>Espresso Classics</h2>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=100" alt="Espresso">
+                    <div class="info"><div class="row"><span>Espresso</span><span class="price">₹120</span></div><div class="desc">Rich double shot espresso.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=100" alt="Americano">
+                    <div class="info"><div class="row"><span>Caffè Americano</span><span class="price">₹140</span></div><div class="desc">Espresso with hot water.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=100" alt="Latte">
+                    <div class="info"><div class="row"><span>Caffè Latte</span><span class="price">₹170</span></div><div class="desc">Espresso with steamed milk.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=100" alt="Cappuccino">
+                    <div class="info"><div class="row"><span>Cappuccino</span><span class="price">₹170</span></div><div class="desc">Espresso with dense milk foam.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=100" alt="Flat White">
+                    <div class="info"><div class="row"><span>Flat White</span><span class="price">₹180</span></div><div class="desc">Ristretto shots with microfoam.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=100" alt="Cortado">
+                    <div class="info"><div class="row"><span>Cortado</span><span class="price">₹160</span></div><div class="desc">Equal espresso & warm milk.</div></div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <h2>Cold & Brews</h2>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=100" alt="Cold Brew">
+                    <div class="info"><div class="row"><span>Classic Cold Brew</span><span class="price">₹180</span></div><div class="desc">Steeped for 18 hours.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=100" alt="Nitro Brew">
+                    <div class="info"><div class="row"><span>Nitro Cold Brew</span><span class="price">₹210</span></div><div class="desc">Infused with nitrogen gas.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=100" alt="Iced Latte">
+                    <div class="info"><div class="row"><span>Iced Vanilla Latte</span><span class="price">₹190</span></div><div class="desc">Espresso, ice & vanilla bean.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=100" alt="Affogato">
+                    <div class="info"><div class="row"><span>Espresso Affogato</span><span class="price">₹220</span></div><div class="desc">Hot espresso over gelato.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=100" alt="Mocha Brew">
+                    <div class="info"><div class="row"><span>Mocha Brew</span><span class="price">₹200</span></div><div class="desc">Dark chocolate & espresso.</div></div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1530373239216-42518e6b4063?w=100" alt="Caramel Foam">
+                    <div class="info"><div class="row"><span>Caramel Cold Foam</span><span class="price">₹210</span></div><div class="desc">Cold brew with sweet foam.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cutout QR Code Section -->
+        <div class="cutout">
+            <div class="cutout-text">
+                <h3>✂️ Cutout QR Section</h3>
+                <p>Scan with phone camera to view live digital menu</p>
+            </div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://trisha07-p.github.io/cafe-menu/" alt="QR Code">
+        </div>
+    </div>
+
+</body>
+</html>
